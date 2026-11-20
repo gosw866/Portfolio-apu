@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apu Goswami — IT & Network Professional</title>
+<meta name="description" content="Portfolio of Apu Goswami: IT Executive focused on networking, system administration and cyber security.">
+<style>
+:root{--bg:#070b16;--bg2:#0d1426;--card:#111a30;--tx:#e8edf8;--mut:#93a0bd;--a:#22d3ee;--b:#8b5cf6;--line:#1f2b48}
+:root[data-theme=light]{--bg:#f5f7fc;--bg2:#eaeff9;--card:#fff;--tx:#0e1730;--mut:#55627f;--a:#0891b2;--b:#6d28d9;--line:#d9e0f0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--a)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--mut)}
+nav ul a:hover{color:var(--a)}
+#theme{background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:6px 10px;cursor:pointer}
+@media(max-width:720px){nav ul{display:none}}
+.hero{position:relative;overflow:hidden;padding:84px 0 70px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr;text-align:center}.hero .btns,.hero .tags{justify-content:center}.avatar{margin:auto}}
+.hi{color:var(--a);font-weight:600;letter-spacing:2px;font-size:.85rem;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.1;margin:10px 0 14px}
+.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.15rem;color:var(--mut);min-height:1.8em}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--a);vertical-align:-3px;margin-left:3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.tags,.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.tag{font-size:.8rem;padding:5px 12px;border:1px solid var(--line);border-radius:99px;color:var(--mut);background:var(--card)}
+.btn{padding:11px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);transition:.2s}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border:0}
+.btn:hover{transform:translateY(-2px)}
+.avatar{width:min(290px,70vw);aspect-ratio:1;border-radius:32% 68% 60% 40%/42% 38% 62% 58%;padding:5px;background:linear-gradient(135deg,var(--a),var(--b));animation:morph 9s ease-in-out infinite;box-shadow:0 20px 60px -20px var(--b)}
+.avatar>div{width:100%;height:100%;border-radius:inherit;overflow:hidden;background:var(--card);display:grid;place-items:center;font-size:4rem;font-weight:800}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:.9rem;font-weight:600;transition:.2s}
+.chip:hover{border-color:var(--a);color:var(--a);transform:translateY(-2px)}
+.proj img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:10px}
+@keyframes morph{50%{border-radius:60% 40% 38% 62%/55% 60% 40% 45%}}
+section{padding:72px 0}
+section.alt{background:var(--bg2)}
+.eyebrow{color:var(--a);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:6px 0 30px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--a)}
+.ico{font-size:1.7rem}
+.card h3{margin:8px 0 4px;font-size:1.05rem}
+.card p,.mut{color:var(--mut);font-size:.93rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:26px}
+.stat{text-align:center;padding:18px;border:1px dashed var(--line);border-radius:16px}
+.stat b{display:block;font-size:1.8rem}
+.timeline{position:relative;padding-left:26px;border-left:2px solid var(--line)}
+.item{position:relative;margin-bottom:26px}
+.item::before{content:"";position:absolute;left:-35px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px var(--bg)}
+section.alt .item::before{box-shadow:0 0 0 5px var(--bg2)}
+.item .when{font-size:.82rem;color:var(--a);font-weight:600}
+.item h3{font-size:1.1rem}
+.item img{margin-top:12px;max-width:100%;width:340px;border-radius:14px;border:1px solid var(--line)}
+.item ul{margin:8px 0 0 18px;color:var(--mut);font-size:.93rem}
+.bar{margin-bottom:16px}
+.bar div.l{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:6px}
+.bar .t{height:9px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar .f{height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1.3s ease}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.gal figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:.4s}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{padding:10px 14px;font-size:.85rem;color:var(--mut)}
+.contact a.card{display:block}
+footer{text-align:center;padding:28px;color:var(--mut);font-size:.85rem;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(26px);transition:.7s}.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">APU<b>.</b>GOSWAMI</a>
+  <ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul>
+  <button id="theme" aria-label="Toggle theme">🌓</button>
+</div></nav>
+
+<header class="hero" id="top">
+  <canvas id="net"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="hi" id="hHi"></div>
+      <h1 id="hName"></h1>
+      <div class="role"><span id="typed"></span><span class="cursor"></span></div>
+      <div class="tags" id="hTags"></div>
+      <div class="btns">
+        <a class="btn p" href="#contact">Let’s Connect</a>
+        <a class="btn" href="#experience">View Experience</a>
+      </div>
+    </div>
+    <div class="avatar"><div id="photo"></div></div>
+  </div>
+</header>
+
+<section id="about"><div class="wrap rv">
+  <div class="eyebrow">About me</div><h2>Building reliable networks, one link at a time</h2>
+  <p id="aboutText" style="max-width:760px;color:var(--mut)"></p>
+  <div class="stats" id="stats"></div>
+</div></section>
+
+<section class="alt" id="skills"><div class="wrap rv">
+  <div class="eyebrow">Expertise</div><h2>What I work with</h2>
+  <div class="grid" id="focus"></div>
+  <h3 style="margin:44px 0 16px">Technologies & topics</h3>
+  <div class="chips" id="chips"></div>
+  <div class="two" style="margin-top:44px">
+    <div><h3 style="margin-bottom:18px">Learning progress</h3><div id="bars"></div></div>
+    <div><h3 style="margin-bottom:18px">Languages</h3><div id="langs"></div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap rv">
+  <div class="eyebrow">Hands-on</div><h2>Network Labs & Projects</h2>
+  <div class="grid" id="projGrid"></div>
+</div></section>
+
+<section class="alt" id="experience"><div class="wrap rv">
+  <div class="eyebrow">Career</div><h2>Experience</h2>
+  <div class="timeline" id="exp"></div>
+</div></section>
+
+<section id="education"><div class="wrap rv">
+  <div class="eyebrow">Learning</div><h2>Education</h2>
+  <div class="timeline" id="edu"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap rv">
+  <div class="eyebrow">Moments</div><h2>Gallery</h2>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section class="alt contact" id="contact"><div class="wrap rv">
+  <div class="eyebrow">Contact</div><h2>Let’s work together</h2>
+  <div class="grid" id="contactGrid"></div>
+</div></section>
+
+<footer>© <span id="yr"></span> <span id="fName"></span> · Built with HTML, CSS & JavaScript</footer>
+
+<script>
+/* =====================================================================
+   ✏️  EDIT ONLY THIS BLOCK — everything on the page comes from here.
+   📷  Photos: create an "images" folder next to index.html, put files in,
+       then write the path, e.g. "images/profile.jpg".
+   ===================================================================== */
+const DATA = {
+  name: "Apu Goswami",
+  greeting: "Hello, I’m",
+  photo: "images/profile.jpg",   // your photo (put new photos in the images folder)
+  roles: ["IT Executive", "Network Enthusiast", "System Administrator in the making", "Cyber Security Learner"],
+  tags: ["Networking", "System Administration", "Cyber Security", "Cloud Computing"],
+  about: "I’m an IT professional based in Uttara, Dhaka, working as a Junior IT Executive at Sundarban Courier Service. I’m passionate about networking and system administration, and I’m growing my skills through CCNA and MikroTik MTCNA while completing my B.Sc. in Computer Science & Engineering.",
+  stats: [["2022", "Started professional career"], ["2026", "B.Sc. CSE (expected)"], ["2", "Languages spoken"], ["4", "Core interest areas"]],
+  focus: [
+    ["🌐", "Networking", "Routing, switching and network fundamentals with CCNA and MikroTik."],
+    ["🖥️", "System Administration", "Keeping systems, users and services running smoothly."],
+    ["🔐", "Cyber Security", "Learning to protect networks, data and users from threats."],
+    ["☁️", "Cloud Computing", "Exploring cloud services and modern infrastructure."]
+  ],
+  tech: ["TCP/IP", "Subnetting", "VLAN", "Routing & Switching", "Cisco", "MikroTik RouterOS", "DHCP / DNS", "NAT & Firewall", "Wi-Fi", "Windows Server", "Linux", "Network Troubleshooting", "Cyber Security Basics", "Cloud Basics"],
+  // 🧪 Add your labs/projects here. Remove the // to enable the example, then edit it. Empty = section hidden.
+  projects: [
+    // { title: "MikroTik Office Network Lab", text: "Describe what you built and what you learned.", tags: ["MikroTik", "VLAN"], image: "images/lab1.jpg", link: "" },
+  ],
+  progress: [["CCNA", 55], ["MikroTik MTCNA", 50], ["System Administration", 60], ["Cyber Security", 35]], // % is your estimate — change freely
+  languages: [["Bangla", "Native"], ["English", "Professional working proficiency"]],
+  experience: [
+    { when: "Dec 2025 – Present", title: "Jr. IT Executive", org: "Sundarban Courier Service (Pvt.) Ltd.",
+      points: ["Supporting day-to-day IT operations and users", "Working with network and system infrastructure"], image: "" },
+    { when: "Sept 2022 – Dec 2025", title: "Telemarketing Officer", org: "Service Dibo Ltd.",
+      points: ["Customer communication and service coordination", "Built strong communication and professional skills"], image: "" }
+    // ➕ Copy one { ... } block above and paste a new one to add experience.
+  ],
+  education: [
+    { when: "Expected 2026", title: "B.Sc. in Computer Science & Engineering", org: "Uttara University", image: "" },
+    { when: "2022", title: "Diploma in Computer Technology", org: "FA Technical and IT Institute, Kurigram", image: "" }
+  ],
+  gallery: [
+    // { src: "images/photo1.jpg", caption: "My workspace" },
+  ],
+  contact: [
+    ["✉️", "Email", "apug6546@gmail.com", "mailto:apug6546@gmail.com"],
+    ["💬", "WhatsApp", "+880 1799-593702", "https://wa.me/8801799593702"],
+    ["💼", "LinkedIn", "apu-goswami-it", "https://linkedin.com/in/apu-goswami-it"],
+    ["🐙", "GitHub", "gosw866", "https://github.com/gosw866"]
+  ]
+};
+/* ===================== END OF EDITABLE BLOCK ===================== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+$('hHi').textContent = DATA.greeting;
+$('hName').innerHTML = '<span class="grad">' + esc(DATA.name) + '</span>';
+$('hTags').innerHTML = DATA.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('');
+$('aboutText').textContent = DATA.about;
+$('fName').textContent = DATA.name; $('yr').textContent = new Date().getFullYear();
+document.title = DATA.name + ' — IT & Network Professional';
+
+$('photo').innerHTML = DATA.photo
+  ? '<img src="' + esc(DATA.photo) + '" alt="' + esc(DATA.name) + '" onerror="this.parentNode.textContent=\'' + DATA.name.split(' ').map(w => w[0]).join('') + '\'">'
+  : DATA.name.split(' ').map(w => w[0]).join('');
+
+$('stats').innerHTML = DATA.stats.map(s => '<div class="stat"><b class="grad">' + esc(s[0]) + '</b><span class="mut">' + esc(s[1]) + '</span></div>').join('');
+$('focus').innerHTML = DATA.focus.map(f => '<div class="card"><div class="ico">' + f[0] + '</div><h3>' + esc(f[1]) + '</h3><p>' + esc(f[2]) + '</p></div>').join('');
+$('bars').innerHTML = DATA.progress.map(p => '<div class="bar"><div class="l"><span>' + esc(p[0]) + '</span><span>' + p[1] + '%</span></div><div class="t"><div class="f" data-w="' + p[1] + '"></div></div></div>').join('');
+$('langs').innerHTML = DATA.languages.map(l => '<div class="card" style="margin-bottom:12px;padding:16px"><b>' + esc(l[0]) + '</b><div class="mut">' + esc(l[1]) + '</div></div>').join('');
+
+const tl = e => '<div class="item"><div class="when">' + esc(e.when) + '</div><h3>' + esc(e.title) + '</h3><div class="mut">' + esc(e.org) + '</div>' +
+  (e.points ? '<ul>' + e.points.map(p => '<li>' + esc(p) + '</li>').join('') + '</ul>' : '') +
+  (e.image ? '<img src="' + esc(e.image) + '" alt="' + esc(e.title) + '" loading="lazy">' : '') + '</div>';
+$('chips').innerHTML = DATA.tech.map(t => '<span class="chip">' + esc(t) + '</span>').join('');
+if (DATA.projects.length) $('projGrid').innerHTML = DATA.projects.map(p => '<div class="card proj">' + (p.image ? '<img src="' + esc(p.image) + '" alt="" loading="lazy">' : '') + '<h3>' + esc(p.title) + '</h3><p>' + esc(p.text) + '</p><div class="tags">' + (p.tags||[]).map(t => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>' + (p.link ? '<p style="margin-top:12px"><a class="grad" href="' + esc(p.link) + '" target="_blank" rel="noopener">View →</a></p>' : '') + '</div>').join('');
+else $('projects').style.display = 'none';
+$('exp').innerHTML = DATA.experience.map(tl).join('');
+$('edu').innerHTML = DATA.education.map(tl).join('');
+
+if (DATA.gallery.length) $('gal').innerHTML = DATA.gallery.map(g => '<figure><img src="' + esc(g.src) + '" alt="' + esc(g.caption || '') + '" loading="lazy"><figcaption>' + esc(g.caption || '') + '</figcaption></figure>').join('');
+else $('gallery').style.display = 'none';
+
+$('contactGrid').innerHTML = DATA.contact.map(c => '<a class="card" href="' + esc(c[3]) + '" target="_blank" rel="noopener"><div class="ico">' + c[0] + '</div><h3>' + esc(c[1]) + '</h3><p>' + esc(c[2]) + '</p></a>').join('');
+
+/* typing effect */
+(function(){let i=0,j=0,del=false;const el=$('typed');(function tick(){const w=DATA.roles[i];el.textContent=w.slice(0,j);
+  if(!del&&j===w.length){del=true;return setTimeout(tick,1500)}
+  if(del&&j===0){del=false;i=(i+1)%DATA.roles.length}
+  j+=del?-1:1;setTimeout(tick,del?35:70)})()})();
+
+/* scroll reveal + skill bars */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) {
+  e.target.classList.add('in'); e.target.querySelectorAll('.f').forEach(f => f.style.width = f.dataset.w + '%'); } }), {threshold:.15});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* theme */
+const root = document.documentElement;
+try { const s = localStorage.getItem('theme'); if (s) root.dataset.theme = s; } catch(e){}
+$('theme').onclick = () => { const t = root.dataset.theme === 'light' ? 'dark' : 'light'; root.dataset.theme = t; try { localStorage.setItem('theme', t); } catch(e){} };
+
+/* animated network background */
+(function(){
+  const c = $('net'), x = c.getContext('2d'); let W, H, pts = [];
+  const size = () => { W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; pts = Array.from({length: Math.min(70, W/14)}, () => ({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5})); };
+  size(); addEventListener('resize', size);
+  (function draw(){
+    x.clearRect(0,0,W,H);
+    const col = getComputedStyle(root).getPropertyValue('--a').trim();
+    pts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x<0||p.x>W) p.vx*=-1; if (p.y<0||p.y>H) p.vy*=-1;
+      x.fillStyle = col; x.beginPath(); x.arc(p.x,p.y,2,0,6.3); x.fill(); });
+    for (let i=0;i<pts.length;i++) for (let k=i+1;k<pts.length;k++) {
+      const d = Math.hypot(pts[i].x-pts[k].x, pts[i].y-pts[k].y);
+      if (d<120) { x.strokeStyle = col; x.globalAlpha = (1-d/120)*.4; x.beginPath(); x.moveTo(pts[i].x,pts[i].y); x.lineTo(pts[k].x,pts[k].y); x.stroke(); x.globalAlpha = 1; } }
+    requestAnimationFrame(draw);
+  })();
+})();
+</script>
+</body>
+</html>
